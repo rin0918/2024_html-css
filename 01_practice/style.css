@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+body {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+}
+
+.inner {
+    max-width: 1260px;
+    width: 76%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img {
+    height: auto;
+    vertical-align: bottom;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.toptext {
+    background-color: #FFFFFF;
+    width: 344px;
+    padding: 40px;
+}
+
+.top {
+    background: url(./images/bg_main.png) center/ cover no-repeat;
+    padding: 240px 0 80px;
+}
+
+
+
+.catch {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 36px;
+    width: 80px;
+    border-bottom: 1px solid #1E1E1E;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2::before {
+    content: 'KUMONが向き合うもの';
+    display: inline-block;
+    width: 200px;
+    font-size: 14px;
+    background-color: #72C9F3;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 8px 14px;
+    margin: 100px auto 25px;
+}
+
+.post1 {
+    position: relative;
+}
+
+.belt1 {
+    background-color: rgba(175, 50, 50, 0.8);
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+}
+
+.post2 {
+    position: relative;
+
+}
+
+.belt2 {
+    background-color: rgba(175, 50, 50, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+@media(min-width:640px) {}
