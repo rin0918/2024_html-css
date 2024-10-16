@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+/* base */
+body {
+    color: #888888;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.71;
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* header */
+header {
+    text-align: center;
+    background-color: #fff;
+}
+
+.header__inner {
+    max-width: 1000px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__logo {
+    line-height: 1;
+}
+
+/* news */
+.news {
+    margin-top: 60px;
+}
+
+.news__inner {
+    max-width: 1000px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #202124;
+    border-left: 10px solid #FA6980;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+.news__item {
+    width: 47%;
+}
+
+.card {
+    margin-bottom: 60px;
+}
+
+.card__info {
+    font-size: 12px;
+    font-style: italic;
+    color: #FA6980;
+    margin-bottom: 10px;
+}
+
+.card__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #202124;
+}
+
+.card__time {
+    color: #BBBBBB;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card__text {
+    margin: 15px 0 20px;
+}
+
+/* trending */
+.trending {
+    padding: 60px 0;
+    background-color: #F6F6F6;
+}
+
+.trending__inner {
+    max-width: 1000px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trending__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #202124;
+    border-left: 10px solid #FA6980;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+.unit__body {
+    width: 380px;
+    padding: 35px;
+    background-color: #FFFFFF;
+}
+
+.btn {
+    color: #FFFFFF;
+    background-color: #FA6980;
+    width: 160px;
+    display: block;
+    text-align: center;
+    padding: 14px 0;
+    margin-left: 150px;
+}
+
+.trending__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.unit__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #202124;
+}
+
+.unit__text {
+    margin: 15px 0 25px;
+}
+
+.trending__item {
+    width: 47%;
+}
