@@ -1,0 +1,114 @@
+@charset "utf-8";
+$color-text: #31353B;
+$color-accent: #FF9900;
+$color-title: #000000;
+
+@mixin inner($w: 90%, $mw: 1000px) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin btn($w: 200px) {
+    display: inline-block;
+    color: #FFFFFF;
+    width: $w;
+    padding: 20px 33px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@mixin title {
+    color: $color-title;
+    margin: 20px 0 40px;
+    line-height: (58/48);
+}
+
+body {
+    font-size: 15px;
+    color: $color-text;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: (26/15);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: center;
+}
+
+/*header*/
+.header {
+    font-weight: bold;
+
+    &__inner {
+        @include inner();
+        @include flex();
+    }
+
+    &__title {
+        @include title();
+        font-size: 24px
+    }
+
+    &__ul {
+        @include flex();
+    }
+
+    &__li {
+        margin: 15px;
+    }
+}
+
+span {
+    color: $color-accent;
+}
+
+/*main*/
+.smart {
+    &__inner {
+        @include inner();
+        @include flex();
+    }
+
+    &__item {
+        width: 44%;
+    }
+}
+
+.post {
+    &__category {
+        color: $color-accent;
+    }
+
+    &__title {
+        @include title();
+        font-size: 48px;
+    }
+
+    &__img {
+        width: 50%;
+    }
+}
+
+.btn {
+    @include btn();
+    background-color: #F85A47;
+    margin-top: 60px;
+}
+
+.love {
+    &__inner {
+        @include inner();
+    }
+}
