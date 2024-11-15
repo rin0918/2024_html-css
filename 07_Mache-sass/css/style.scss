@@ -66,6 +66,8 @@ img {
     position: fixed;
     width: 100%;
     font-weight: bold;
+    top: 0;
+    left: 0;
 
     &__inner {
         @include m-inner();
@@ -186,6 +188,60 @@ img {
 img {
     object-fit: cover;
     aspect-ratio: 16/9;
+}
+
+.service {
+    margin-top: 80px;
+
+    &__inner {
+        @include m-inner();
+    }
+
+
+    &__title {
+        font-size: 38px;
+        margin-bottom: 50px;
+    }
+
+    // &__item {
+
+    //     &:nth-child(odd) {
+    //         .post__title {
+    //             margin-left: auto;
+
+    //             @include m-query(table) {
+    //                 margin-left: 0;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.test {
+    text-align: center;
+    padding: 80px 40px;
+    background: url(../images/bg_testimonials.png) no-repeat center center /cover;
+
+    &__title {
+        font-size: 38px;
+        font-weight: bold;
+        color: $color-title;
+        margin-bottom: 50px;
+    }
+
+    &__contents {
+        padding: 50px;
+        background-color: #FFFFFF;
+        text-align: center;
+    }
+
+    &__text {
+        margin: 37px 0 25px;
+    }
+
+    &__name {
+        margin-bottom: 40px;
+    }
 }
 
 // footer

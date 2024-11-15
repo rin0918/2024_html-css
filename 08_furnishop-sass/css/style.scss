@@ -1,0 +1,290 @@
+@charset "utf-8";
+
+$color-main: #244D4D;
+$color-gb: #f4f4f4;
+
+
+$breakpoints: (
+    "desktop": "screen and (min-width: 740px)"
+    ) !default;
+
+@mixin m-query($breakpoint: "desktop") {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin m-inner($w: (640/740)*100%, $mw: 1000px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin m-flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@function f-rem($value) {
+    @return($value/16)+rem;
+}
+
+// base
+// -----------------------
+
+// html {
+//     font-size: (12em/16
+//     );
+
+// @include m-query() {
+//     font-size: (16em/16);
+// }
+// }
+
+body {
+    color: $color-main;
+    font-family: 'Gill Sans',
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif;
+    font-size: f-rem(16
+    );
+line-height: (27/16);
+letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// header
+.header {
+    padding: (40em/16);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+
+
+    &__inner {
+        @include m-flex(align-items start);
+        @include m-inner();
+    }
+
+    &__logo {
+        // font-size: (26rem/24);
+        // デザインデータのpxをrem
+        // 親要素の2倍 2em
+        font-weight: bold;
+        overflow-wrap: anywhere;
+        // @function f-rem(26)
+    }
+}
+
+// nav
+
+.nav {
+    &__list {
+        @include m-flex();
+    }
+
+    &__item {
+        margin-left: (30em/16);
+    }
+
+    &__active {
+        text-decoration: underline;
+    }
+}
+
+.visual {
+    background: url(../images/bg_hero.png) no-repeat center bottom / cover;
+    padding: (250em/16) 0 (140em/16);
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__text {
+        width: (480em/16);
+        padding: (65em/16) (60em/16);
+        background-color: rgba(255, 255, 255, .6);
+
+        p {
+            font-size: f-rem(48);
+            font-weight: bold;
+            line-height: (58/48);
+        }
+    }
+}
+
+// about
+.about {
+    &__inner {
+        @include m-inner();
+    }
+
+    &__item {
+        @include m-flex(flex-start);
+
+        @include m-query("desktop") {
+            width: (470/1000)*100%;
+
+            &:nth-last-child(-n+2) {
+                margin-bottom: 0;
+            }
+        }
+
+        img {
+            aspect-ratio: 5/3;
+            width: 200px;
+            object-fit: cover;
+
+            @include m-query("desktop") {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-size: f-rem(48);
+        font-weight: bold;
+        border-bottom: 2px solid $color-main ;
+        margin-bottom: (60em/48);
+        margin-top: (80em/48);
+        padding-bottom: (30em/48);
+    }
+
+    &__list {
+        @include m-query("desktop") {
+            @include m-flex();
+        }
+    }
+
+
+}
+
+.post {
+
+    margin-bottom: (50em/16);
+
+    &__title {
+        font-size: f-rem(24);
+        font-weight: bold;
+        margin-bottom: (25em/24);
+    }
+
+    &__contents {
+        flex: 1;
+        margin-left: (20em/16);
+    }
+
+    &__text {
+        width: fit-content;
+    }
+
+    &__price {
+        margin-bottom: (30em/16);
+    }
+}
+
+.products {
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        font-size: f-rem(48);
+        font-weight: bold;
+        border-bottom: 2px solid $color-main ;
+        margin-bottom: (60em/48);
+        margin-top: (120em/48);
+        padding-bottom: (30em/48);
+    }
+
+    &__list {
+        @include m-flex();
+    }
+
+    &__item {
+        text-align: center;
+        padding: (45em/16) 0;
+        width: (300/640)*100%;
+        background-color: $color-gb;
+
+        @include m-query("desktop") {
+            width: (300/1000)*100%;
+        }
+    }
+}
+
+.btn {
+    width: fit-content;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: (10em/16);
+    padding: (18em/16) (40em/16);
+    background-color: $color-main;
+    margin: (10em/16) auto (120em/16);
+}
+
+// footer
+.footer {
+    color: #FFFFFF;
+    background-color: $color-main;
+    padding: (120em/16) 0;
+
+    &__inner {
+        @include m-inner();
+
+        @include m-query("desktop") {
+            @include m-flex();
+        }
+    }
+
+    &__title {
+        font-size: f-rem(24);
+        font-weight: bold;
+        margin-bottom: (25em/24);
+    }
+
+    &__nav {
+
+        @include m-flex(flex-start);
+        flex-wrap: wrap;
+
+        @include m-query("desktop") {
+            &:nth-child(1) {
+                order: 2;
+            }
+
+            &:nth-child(2) {
+                order: 1;
+            }
+        }
+    }
+
+    &__contents {
+        width: (300/640)*100%;
+        margin-bottom: (60em/16);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__address {
+        margin: (40em/16) 0 (20em/16);
+    }
+}
