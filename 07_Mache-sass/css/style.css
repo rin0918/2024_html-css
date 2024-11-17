@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   line-height: 1.7142857143;
   letter-spacing: 0.025em;
+  padding-top: 7.1428571429em;
 }
 
 img {
@@ -164,6 +165,25 @@ img {
 .service__title {
   font-size: 38px;
   margin-bottom: 50px;
+  font-weight: bold;
+  color: #2B2B2B;
+  text-align: center;
+}
+.service__title :nth-child(even) {
+  text-align: right;
+}
+@media screen and (min-width: 800px) {
+  .service__item {
+    width: 46.6666666667%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .service__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .test {
@@ -187,6 +207,15 @@ img {
 }
 .test__name {
   margin-bottom: 40px;
+}
+.test .btn {
+  background-color: #EDAA14;
+}
+.test__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer {

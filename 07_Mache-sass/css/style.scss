@@ -50,6 +50,7 @@ body {
     line-height: (24/14
     );
 letter-spacing: (25em/1000);
+padding-top: (100em/14);
 }
 
 img {
@@ -178,6 +179,7 @@ img {
         background-color: #000000;
         margin-top: 25px;
         margin-bottom: 20px;
+
     }
 
     @include m-query(desktop) {
@@ -193,6 +195,7 @@ img {
 .service {
     margin-top: 80px;
 
+
     &__inner {
         @include m-inner();
     }
@@ -201,20 +204,30 @@ img {
     &__title {
         font-size: 38px;
         margin-bottom: 50px;
+        font-weight: bold;
+        color: $color-title;
+        text-align: center;
+
+        :nth-child(even) {
+            text-align: right;
+        }
+
+        ;
     }
 
-    // &__item {
+    &__item {
+        @include m-query(desktop) {
+            width: (420/900)*100%;
+        }
 
-    //     &:nth-child(odd) {
-    //         .post__title {
-    //             margin-left: auto;
+        ;
+    }
 
-    //             @include m-query(table) {
-    //                 margin-left: 0;
-    //             }
-    //         }
-    //     }
-    // }
+    &__list {
+        @include m-query(desktop) {
+            @include m-flex();
+        }
+    }
 }
 
 .test {
@@ -241,6 +254,14 @@ img {
 
     &__name {
         margin-bottom: 40px;
+    }
+
+    .btn {
+        background-color: $color-btn;
+    }
+
+    &__inner {
+        @include m-inner();
     }
 }
 
