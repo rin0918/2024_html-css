@@ -32,6 +32,17 @@ $breakpoints: (
     @return($value/16)+rem;
 }
 
+@mixin m-title-main() {
+    margin-bottom: (60em/48
+    );
+font-size: f-rem(48);
+font-weight: bold;
+line-height: (58/48);
+padding-bottom: (30em/48);
+border-bottom: 2px solid;
+margin-top: (80em/48);
+}
+
 // base
 // -----------------------
 
@@ -51,10 +62,9 @@ body {
         Calibri,
         'Trebuchet MS',
         sans-serif;
-    font-size: f-rem(16
-    );
-line-height: (27/16);
-letter-spacing: 0;
+    font-size: f-rem(16);
+    line-height: (27/16);
+    letter-spacing: 0;
 }
 
 img {
@@ -148,6 +158,7 @@ img {
 
             @include m-query("desktop") {
                 aspect-ratio: 1/1;
+                object-position: center bottom;
             }
         }
 
@@ -157,18 +168,15 @@ img {
     }
 
     &__title {
-        font-size: f-rem(48);
-        font-weight: bold;
-        border-bottom: 2px solid $color-main ;
-        margin-bottom: (60em/48);
-        margin-top: (80em/48);
-        padding-bottom: (30em/48);
+        @include m-title-main();
     }
 
     &__list {
         @include m-query("desktop") {
             @include m-flex();
         }
+
+        padding-bottom: (40em/16);
     }
 
 
@@ -206,16 +214,11 @@ img {
     }
 
     &__title {
-        font-size: f-rem(48);
-        font-weight: bold;
-        border-bottom: 2px solid $color-main ;
-        margin-bottom: (60em/48);
-        margin-top: (120em/48);
-        padding-bottom: (30em/48);
+        @include m-title-main();
     }
 
     &__list {
-        @include m-flex();
+        @include m-flex(stretch);
     }
 
     &__item {
@@ -282,6 +285,11 @@ img {
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @include m-query("desktop") {
+            width: fit-content;
+            margin-left: (60em/16);
         }
     }
 
